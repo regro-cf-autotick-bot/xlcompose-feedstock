@@ -1,5 +1,5 @@
 {% set name = "xlcompose" %}
-{% set version = "0.2.4" %}
+{% set version = "0.3.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/xlcompose-{{ version }}.tar.gz
-  sha256: a759ca97dfdbd2f66391a47ccc16cf64543855387d4ad9565e4f171fd0342250
+  sha256: de15826cbcea8ea53d264af2808823f75a2098b596b8fbf10fe07a751db9133c
 
 build:
   number: 0
