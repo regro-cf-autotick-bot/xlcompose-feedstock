@@ -7,22 +7,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/xlcompose-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/xlcompose-{{ version }}.tar.gz
   sha256: de15826cbcea8ea53d264af2808823f75a2098b596b8fbf10fe07a751db9133c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python {{ python_min }}
   run:
     - jinja2
     - pandas
-    - python >=3.5
+    - python >={{ python_min }}
     - pyyaml
     - xlsxwriter >=1.1.8
 
@@ -33,6 +33,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/jbogaardt/xlcompose
